@@ -1,8 +1,8 @@
 // import { ArrowForwardIosRounded, BusinessCenter, Explore, Group, OndemandVideoSharp } from "@mui/icons-material";
 import Head from "next/head";
 import Image from "next/image";
-import HeaderLink from "../components/HeaderLink";
-import { getProviders, signIn } from 'next-auth/react';
+// import HeaderLink from "../components/HeaderLink";
+// import { getProviders, signIn } from 'next-auth/react';
 
 const home = ({ providers }) => {
   return (
