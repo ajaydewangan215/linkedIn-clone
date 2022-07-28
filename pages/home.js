@@ -22,13 +22,13 @@ const home = ({providers}) => {
           />
         </div>
 
-        {/* <div className="flex items-center sm:divide-x divide-gray-300">
-          <div className="hidden sm:flex space-x-8 pr-4">
+        <div className="flex items-center sm:divide-x divide-gray-300">
+          {/* <div className="hidden sm:flex space-x-8 pr-4">
             <HeaderLink Icon={Explore} text="Discover"/>
             <HeaderLink Icon={Group} text="People"/>
             <HeaderLink Icon={OndemandVideoSharp} text="Learning"/>
             <HeaderLink Icon={BusinessCenter} text="Jobs"/>
-          </div>
+          </div> */}
 
           {
             Object.values(providers).map(provider => (
@@ -40,7 +40,7 @@ const home = ({providers}) => {
             ))
           }
           
-        </div> */}
+        </div>
       </header>
 
       {/* <main className="flex flex-col xl:flex-row items-center max-w-screen-lg mx-auto">
