@@ -6,6 +6,8 @@ import React from "react";
 import { getProviders, signIn } from 'next-auth/react';
 
 const home = ({providers}) => {
+
+  console.log('providers', providers)
   return (
     <div className="space-y-10">
       <Head>
@@ -30,7 +32,7 @@ const home = ({providers}) => {
             <HeaderLink Icon={BusinessCenter} text="Jobs"/>
           </div> */}
 
-          {
+          {/* {
             Object.values(providers).map(provider => (
               <div key={provider.name}>
                 <div className="pl-4">
@@ -38,7 +40,7 @@ const home = ({providers}) => {
                 </div>
               </div>
             ))
-          }
+          } */}
           
         </div>
       </header>
