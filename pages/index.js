@@ -1,8 +1,11 @@
 import Head from 'next/head'
 import Header from '../components/Header'
 import Sidebar from '../components/Sidebar'
+import Widgets from '../components/Widgets'
+import { getSession, useSession } from 'next-auth/react'
+import { connectToDatabase } from "../util/mongodb"
 
-export default function Home() {
+export default function Home({articles, posts}) {
   return (
     <div className='bg-[#F3F2EF] text-black dark:bg-black dark:text-white h-screen overflow-y-auto md:space-y-6'>
       <Head>
@@ -19,8 +22,8 @@ export default function Home() {
           {/* <Feed posts={posts} /> */}
         </div>
         {/* widgets */}
-        {/* <Widgets articles={articles} />
-        <AnimatePresence>
+        <Widgets articles={articles} />
+        {/* <AnimatePresence>
           {modalOpen && (
             <Modal handleClose={() => setModalOpen(false)} type={modalType} />
           )}
@@ -28,4 +31,40 @@ export default function Home() {
       </main>
     </div>
   )
+}
+
+export async function getServerSideProps(context) {
+  // checkif the user is authenticated on the Server...
+  const session = await getSession(context)
+  // if(!session){
+  //   return {
+  //     redirect: {
+  //       permanent:false,
+  //       destination:"/home",
+  //     }, // will be passed to the page component as props
+  //   }
+  // }
+
+  // Get posts on SSR
+  const { db } = await connectToDatabase();
+  const posts = await db.collection("posts").find().sort({ timestamp: -1 }).toArray();
+
+  // get GoogleNew Api
+  const result = await fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${process.env.NEWS_API_KEY}`).then(res => res.json())
+
+  return {
+    props: {
+      session,
+      articles: result.articles,
+      posts: posts.map((post) => ({
+        _id: post._id.toString(),
+        input: post.input,
+        photoUrl: post.photoUrl,
+        username: post.username,
+        email: post.email,
+        userImg: post.userImg,
+        createdAt: post.createdAt,
+      })),
+    }
+  }
 }
