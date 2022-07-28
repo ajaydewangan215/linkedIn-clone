@@ -15,7 +15,7 @@ const HeaderLink = ({ Icon, text, avatar, feed, active, hidden }) => {
       } ${active && "!text-black dark:!text-white" }`}
       onClick={() => avatar && signOut()}
     >
-      {/* {avatar ? <Icon className="!h-7 !w-7 lg:!-mb-1" src={session?.user?.image} /> : <Icon />} */}
+      {avatar ? <Icon className="!h-7 !w-7 lg:!-mb-1" src={session?.user?.image} /> : <Icon />}
       <h4 className={`text-sm ${feed && "hidden lg:flex justify-center w-full mx-auto"}`}>{text}</h4>
       
       {active && (
