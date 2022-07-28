@@ -1,13 +1,11 @@
-// import { ArrowForwardIosRounded, BusinessCenter, Explore, Group, OndemandVideoSharp } from "@mui/icons-material";
+import { ArrowForwardIosRounded, BusinessCenter, Explore, Group, OndemandVideoSharp } from "@mui/icons-material";
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
-// import HeaderLink from "../components/HeaderLink";
+import HeaderLink from "../components/HeaderLink";
 import { getProviders, signIn } from 'next-auth/react';
 
 const home = ({providers}) => {
-
-  console.log('providers', providers)
   return (
     <div className="space-y-10">
       <Head>
@@ -25,12 +23,12 @@ const home = ({providers}) => {
         </div>
 
         <div className="flex items-center sm:divide-x divide-gray-300">
-          {/* <div className="hidden sm:flex space-x-8 pr-4">
+          <div className="hidden sm:flex space-x-8 pr-4">
             <HeaderLink Icon={Explore} text="Discover"/>
             <HeaderLink Icon={Group} text="People"/>
             <HeaderLink Icon={OndemandVideoSharp} text="Learning"/>
             <HeaderLink Icon={BusinessCenter} text="Jobs"/>
-          </div> */}
+          </div>
 
           {/* {
             Object.values(providers).map(provider => (
