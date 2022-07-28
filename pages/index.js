@@ -1,9 +1,11 @@
 import Head from 'next/head'
+// import { AnimatePresence } from 'framer-motion'
 import Header from '../components/Header'
 import Sidebar from '../components/Sidebar'
 import Widgets from '../components/Widgets'
 import { getSession, useSession } from 'next-auth/react'
 import { connectToDatabase } from "../util/mongodb"
+import Feed from '../components/Feed'
 
 export default function Home({articles, posts}) {
   return (
@@ -19,7 +21,7 @@ export default function Home({articles, posts}) {
           {/* sidebar */}
           <Sidebar />
           {/* feed */}
-          {/* <Feed posts={posts} /> */}
+          <Feed posts={posts} />
         </div>
         {/* widgets */}
         <Widgets articles={articles} />
