@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Header from '../components/Header'
+import Sidebar from '../components/Sidebar'
 
 export default function Home() {
   return (
@@ -9,6 +10,22 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+
+      <main className='flex justify-center gap-x-5 px-4 sm:px-12'>
+        <div className='flex flex-col md:flex-row gap-5'>
+          {/* sidebar */}
+          <Sidebar />
+          {/* feed */}
+          {/* <Feed posts={posts} /> */}
+        </div>
+        {/* widgets */}
+        {/* <Widgets articles={articles} />
+        <AnimatePresence>
+          {modalOpen && (
+            <Modal handleClose={() => setModalOpen(false)} type={modalType} />
+          )}
+        </AnimatePresence> */}
+      </main>
     </div>
   )
 }
