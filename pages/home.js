@@ -1,4 +1,4 @@
-import { ArrowForwardIosRounded, BusinessCenter, Explore, Group, OndemandVideoSharp } from "@mui/icons-material";
+// import { ArrowForwardIosRounded, BusinessCenter, Explore, Group, OndemandVideoSharp } from "@mui/icons-material";
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
@@ -24,10 +24,15 @@ const home = ({providers}) => {
 
         <div className="flex items-center sm:divide-x divide-gray-300">
           <div className="hidden sm:flex space-x-8 pr-4">
-            <HeaderLink Icon={Explore} text="Discover"/>
+            {/* <HeaderLink Icon={Explore} text="Discover"/>
             <HeaderLink Icon={Group} text="People"/>
             <HeaderLink Icon={OndemandVideoSharp} text="Learning"/>
-            <HeaderLink Icon={BusinessCenter} text="Jobs"/>
+            <HeaderLink Icon={BusinessCenter} text="Jobs"/> */}
+
+            <HeaderLink text="Discover"/>
+            <HeaderLink text="People"/>
+            <HeaderLink text="Learning"/>
+            <HeaderLink text="Jobs"/>
           </div>
 
           {/* {
