@@ -1,4 +1,3 @@
-// import { ArrowForwardIosRounded, BusinessCenter, Explore, Group, OndemandVideoSharp } from "@mui/icons-material";
 import Explore from "@mui/icons-material/Explore";
 import Group from "@mui/icons-material/Group";
 import OndemandVideoSharp from "@mui/icons-material/OndemandVideoSharp";
@@ -36,15 +35,15 @@ const home = ({providers}) => {
             <HeaderLink Icon={BusinessCenter} text="Jobs"/>
           </div>
 
-          {/* {
-            Object.values(providers).map(provider => (
+          {
+            providers && Object.values(providers).map(provider => (
               <div key={provider.name}>
                 <div className="pl-4">
                   <button className="text-blue-700 font-semibold rounded-full border border-blue-700 px-5 py-1.5 transition-all hover:border-2" onClick={()=>signIn(provider.id, {callbackUrl: "/"})}>Sign in</button>
                 </div>
               </div>
             ))
-          } */}
+          }
           
         </div>
       </header>
