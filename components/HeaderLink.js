@@ -1,7 +1,7 @@
-// import { signOut, useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 
 const HeaderLink = ({ Icon, text, avatar, feed, active, hidden }) => {
-  // const {data: session} = useSession();
+  const {data: session} = useSession();
 
   const signOut =() => console.log('testing demo :>> ');
   return (

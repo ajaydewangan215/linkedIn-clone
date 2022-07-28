@@ -2,9 +2,9 @@ import { ArrowForwardIosRounded, BusinessCenter, Explore, Group, OndemandVideoSh
 import Head from "next/head";
 import Image from "next/image";
 import HeaderLink from "../components/HeaderLink";
-// import { getProviders, signIn } from 'next-auth/react';
+import { getProviders, signIn } from 'next-auth/react';
 
-const home = () => {
+const home = ({ providers }) => {
   return (
     <div className="space-y-10">
       <Head>
@@ -28,12 +28,8 @@ const home = () => {
             <HeaderLink Icon={OndemandVideoSharp} text="Learning"/>
             <HeaderLink Icon={BusinessCenter} text="Jobs"/>
           </div>
-
-          <div className="pl-4">
-                  <button className="text-blue-700 font-semibold rounded-full border border-blue-700 px-5 py-1.5 transition-all hover:border-2">Sign in</button>
-                </div>
-
-          {/* {
+          
+          {
             Object.values(providers).map(provider => (
               <div key={provider.name}>
                 <div className="pl-4">
@@ -41,7 +37,7 @@ const home = () => {
                 </div>
               </div>
             ))
-          } */}
+          }
           
         </div>
       </header>
@@ -73,11 +69,11 @@ const home = () => {
   );
 };
 
-// export async function getServerSideProps(context) {
-//   const providers = await getProviders()
-//   return {
-//     props: {providers}, // will be passed to the page component as props
-//   }
-// }
+export async function getServerSideProps(context) {
+  const providers = await getProviders()
+  return {
+    props: {providers}, // will be passed to the page component as props
+  }
+}
 
 export default home;
