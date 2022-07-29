@@ -2,11 +2,11 @@ import CloseRounded from '@mui/icons-material/CloseRounded'
 import { Avatar, IconButton } from '@mui/material'
 import { motion } from 'framer-motion'
 import { useSession } from 'next-auth/react'
-// import { useRecoilValue } from 'recoil'
-// import { getPostState } from '../atoms/postAtom'
+import { useRecoilValue } from 'recoil'
+import { getPostState } from '../atoms/postAtom'
 import Backdrop from './Backdrop'
 import Form from './Form'
-// import Posts from './Posts'
+import Posts from './Posts'
 
 const dropIn = {
   hidden: {
@@ -55,7 +55,7 @@ const gifYouUp = {
 const Modal = ({handleClose, type}) => {
 
 const {data: session } = useSession()
-// const post = useRecoilValue(getPostState)
+const post = useRecoilValue(getPostState)
   return (
     <Backdrop onClick={handleClose}>
       {type === 'dropIn' && (
@@ -101,7 +101,7 @@ const {data: session } = useSession()
             className="object-contain max-h-[80vh] w-full max-w-3xl rounded-l-lg"
           />
           <div className="w-full md:w-3/5 bg-white dark:bg-[#1D2226] rounded-r-lg">
-             {/* <Posts post={post} modalPost />  */}
+             <Posts post={post} modalPost /> 
           </div>
         </motion.div>
       )}
