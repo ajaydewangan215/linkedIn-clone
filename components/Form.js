@@ -1,14 +1,14 @@
 import { useSession } from "next-auth/react";
 import { useState } from "react";
-// import { useRecoilState } from "recoil";
-// import { modalState } from "../atoms/modalAtom";
-// import { handlePostState } from "../atoms/postAtom";
+import { useRecoilState } from "recoil";
+import { modalState } from "../atoms/modalAtom";
+import { handlePostState } from "../atoms/postAtom";
 
 const Form = () => {
   const [input, setInput] = useState("");
   const [photoUrl, setPhotoUrl] = useState("");
-  // const [modalOpen, setModalOpen] = useRecoilState(modalState)
-  // const [handlePost, setHandlePost] = useRecoilState(handlePostState);
+  const [modalOpen, setModalOpen] = useRecoilState(modalState)
+  const [handlePost, setHandlePost] = useRecoilState(handlePostState);
 
   const { data: session } = useSession();
 
@@ -32,8 +32,8 @@ const Form = () => {
 
     const responseData = await response.json();
 
-    // setHandlePost(true);
-    // setModalOpen(false);
+    setHandlePost(true);
+    setModalOpen(false);
   };
   
   return (
