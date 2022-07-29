@@ -1,12 +1,12 @@
-import AddRounded from "@mui/icons-material/AddRounded";
-import BookmarkOutlined from "@mui/icons-material/BookmarkOutlined";
-import { Avatar } from "@mui/material";
-import { signOut, useSession } from "next-auth/react";
-import Image from "next/image";
-import React from "react";
+import AddRounded from "@mui/icons-material/AddRounded"
+import BookmarkOutlined from "@mui/icons-material/BookmarkOutlined"
+import Avatar from "@mui/material/Avatar"
+import { signOut, useSession } from "next-auth/react"
+import Image from "next/image"
+import React from "react"
 
 const Sidebar = () => {
-  const { data: session } = useSession();
+  const { data: session } = useSession()
   return (
     <div className="space-y-2 min-w-max max-w-lg">
       {/* top */}

@@ -1,14 +1,13 @@
-import PhotoSizeSelectActual from "@mui/icons-material/PhotoSizeSelectActual";
-import VideoCameraBack from "@mui/icons-material/VideoCameraBack";
-import BusinessCenter from "@mui/icons-material/BusinessCenter";
-import Article from "@mui/icons-material/Article";
-
-import { Avatar } from '@mui/material'
-import { motion } from 'framer-motion';
-import { useSession } from 'next-auth/react';
+import PhotoSizeSelectActual from "@mui/icons-material/PhotoSizeSelectActual"
+import VideoCameraBack from "@mui/icons-material/VideoCameraBack"
+import BusinessCenter from "@mui/icons-material/BusinessCenter"
+import Article from "@mui/icons-material/Article"
+import Avatar from '@mui/material/Avatar'
+import { motion } from 'framer-motion'
+import { useSession } from 'next-auth/react'
 import React from 'react'
-// import { useRecoilState } from 'recoil';
-// import { modalState, modalTypeState } from '../atoms/modalAtom';
+// import { useRecoilState } from 'recoil'
+// import { modalState, modalTypeState } from '../atoms/modalAtom'
 
 const Input = () => {
   const { data: session } = useSession();

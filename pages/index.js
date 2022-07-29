@@ -1,13 +1,29 @@
+import { useState } from 'react'
 import Head from 'next/head'
-// import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 import Header from '../components/Header'
 import Sidebar from '../components/Sidebar'
 import Widgets from '../components/Widgets'
 import { getSession, useSession } from 'next-auth/react'
 import { connectToDatabase } from "../util/mongodb"
 import Feed from '../components/Feed'
+import Modal from '../components/Modal'
 
 export default function Home({articles, posts}) {
+
+  const [modalOpen, setModalOpen] = useState(false)
+  const [modalType, setModalType] = useState('dropIn')
+  // const [modalOpen, setModalOpen] = useRecoilState(modalState)
+  // const [modalType, setModalType] = useRecoilState(modalTypeState)
+
+  // const router = useRouter();
+  // const { status } = useSession({
+  //   required: true,
+  //   onUnauthenticated(){
+  //     router.push("/home")
+  //   }
+  // });
+
   return (
     <div className='bg-[#F3F2EF] text-black dark:bg-black dark:text-white h-screen overflow-y-auto md:space-y-6'>
       <Head>
@@ -25,11 +41,11 @@ export default function Home({articles, posts}) {
         </div>
         {/* widgets */}
         <Widgets articles={articles} />
-        {/* <AnimatePresence>
+        <AnimatePresence>
           {modalOpen && (
             <Modal handleClose={() => setModalOpen(false)} type={modalType} />
           )}
-        </AnimatePresence> */}
+        </AnimatePresence>
       </main>
     </div>
   )

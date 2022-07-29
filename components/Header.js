@@ -1,12 +1,12 @@
-import SearchRounded from "@mui/icons-material/SearchRounded";
-import Group from "@mui/icons-material/Group";
-import BusinessCenter from "@mui/icons-material/BusinessCenter";
-import Chat from "@mui/icons-material/Chat";
-import Notifications from "@mui/icons-material/Notifications";
-import HomeRounded from "@mui/icons-material/HomeRounded";
-import AppsOutageOutlined from "@mui/icons-material/AppsOutlined";
+import SearchRounded from "@mui/icons-material/SearchRounded"
+import Group from "@mui/icons-material/Group"
+import BusinessCenter from "@mui/icons-material/BusinessCenter"
+import Chat from "@mui/icons-material/Chat"
+import Notifications from "@mui/icons-material/Notifications"
+import HomeRounded from "@mui/icons-material/HomeRounded"
+import AppsOutageOutlined from "@mui/icons-material/AppsOutlined"
+import Avatar from '@mui/material/Avatar'
 
-import { Avatar } from '@mui/material'
 import { motion } from 'framer-motion'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
