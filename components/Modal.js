@@ -101,7 +101,7 @@ const {data: session } = useSession()
             className="object-contain max-h-[80vh] w-full max-w-3xl rounded-l-lg"
           />
           <div className="w-full md:w-3/5 bg-white dark:bg-[#1D2226] rounded-r-lg">
-             <Posts post={post} modalPost /> 
+             {/* <Posts post={post} modalPost />  */}
           </div>
         </motion.div>
       )}
