@@ -17,12 +17,12 @@ export default function Home({articles, posts}) {
   const [modalType, setModalType] = useRecoilState(modalTypeState)
 
   const router = useRouter();
-  // const { status } = useSession({
-  //   required: true,
-  //   onUnauthenticated(){
-  //     router.push("/home")
-  //   }
-  // });
+  const { status } = useSession({
+    required: true,
+    onUnauthenticated(){
+      router.push("/home")
+    }
+  });
 
   return (
     <div className='bg-[#F3F2EF] text-black dark:bg-black dark:text-white h-screen overflow-y-auto md:space-y-6'>
@@ -54,14 +54,14 @@ export default function Home({articles, posts}) {
 export async function getServerSideProps(context) {
   // checkif the user is authenticated on the Server...
   const session = await getSession(context)
-  // if(!session){
-  //   return {
-  //     redirect: {
-  //       permanent:false,
-  //       destination:"/home",
-  //     }, // will be passed to the page component as props
-  //   }
-  // }
+  if(!session){
+    return {
+      redirect: {
+        permanent:false,
+        destination:"/home",
+      }, // will be passed to the page component as props
+    }
+  }
 
   // Get posts on SSR
   const { db } = await connectToDatabase();
