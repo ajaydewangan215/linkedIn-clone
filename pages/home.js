@@ -15,7 +15,8 @@ const home = ({providers}) => {
     <div className="space-y-10">
       <Head>
         <title>LindIn Login</title>
-        <link rel="icon" href="/favicon.ico" />
+        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <link rel="icon" href="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg" />
       </Head>
       <header className="flex justify-around items-center py-4">
         <div className="relative w-36 h-10">

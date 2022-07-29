@@ -28,7 +28,7 @@ export default function Home({articles, posts}) {
     <div className='bg-[#F3F2EF] text-black dark:bg-black dark:text-white h-screen overflow-y-auto md:space-y-6'>
       <Head>
         <title>Feed | LinkedIn</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg" />
       </Head>
       <Header />
 
